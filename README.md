@@ -1,12 +1,10 @@
-# YouTube Playback Technology<br />for [Video.js](https://github.com/videojs/video.js)
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/videojs/videojs-youtube.svg)](https://greenkeeper.io/)
+# YouTube Native Playback Technology<br />for [Video.js](https://github.com/videojs/video.js)
 
 ## Install
-You can use bower (`bower install videojs-youtube`), npm (`npm install videojs-youtube`) or the source and build it using `npm run build`. Then, the only file you need is dist/Youtube.min.js.
+You can use the source and build it using `npm run build`. Then, the only file you need is dist/youtube-native.js.
 
 ## Version Note
-Use branch `vjs4` if you still using old VideoJS `v4.x`.
+Only tested with video.js 7.X
 
 ## Example
 ```html
@@ -27,7 +25,7 @@ Use branch `vjs4` if you still using old VideoJS `v4.x`.
   </video>
 
   <script src="../node_modules/video.js/dist/video.min.js"></script>
-  <script src="../dist/Youtube.min.js"></script>
+  <script src="../dist/youtube-native.js"></script>
 </body>
 </html>
 ```
@@ -35,13 +33,12 @@ Use branch `vjs4` if you still using old VideoJS `v4.x`.
 See the examples folder for more
 
 ## How does it work?
-Including the script Youtube.min.js will add the YouTube as a tech. You just have to add it to your techOrder option. Then, you add the option src with your YouTube URL.
+Including the script youtube-native.js will add the YouTube as a tech. You just have to add it to your techOrder option. Then, you add the option src with your YouTube URL.
 
 It supports:
 - youtube.com as well as youtu.be
 - Regular URLs: http://www.youtube.com/watch?v=xjS6SftYQaQ
 - Embeded URLs: http://www.youtube.com/embed/xjS6SftYQaQ
-- Playlist URLs: http://www.youtube.com/playlist?list=PLA60DCEB33156E51F OR http://www.youtube.com/watch?v=xjS6SftYQaQ&list=SPA60DCEB33156E51F
 
 ## Options
 It supports every regular Video.js options. Additionally, you can change any [YouTube parameter](https://developers.google.com/youtube/player_parameters?hl=en#Parameters). Here is an example of setting the `iv_load_policy` parameter to `1`.
@@ -58,20 +55,6 @@ It supports every regular Video.js options. Additionally, you can change any [Yo
 </video>
 ```
 
-### YouTube controls
-Because `controls` is already a Video.js option, to use the YouTube controls, you must set the `ytControls` parameter.
-
-```html
-<video
-  id="vid1"
-  class="video-js vjs-default-skin"
-  controls
-  autoplay
-  width="640" height="264"
-  data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}], "youtube": { "ytControls": 2 } }'
->
-</video>
-```
 
 ### Custom Player Options
 If you need to set any additional options on the YouTube player, you may do so with the `customVars` parameter:
@@ -89,12 +72,12 @@ If you need to set any additional options on the YouTube player, you may do so w
 ```
 
 ## Special Thank You
-Thanks to Steve Heffernan for the amazing Video.js and to John Hurliman for the original version of the YouTube tech
+Thanks to Steve Heffernan for the amazing Video.js, to John Hurliman for the original version of the YouTube tech, Benoit Tremblay for the more complete Youtube that this one 90% copies, and the Vimeo plugin from where other things were grabbed
 
 ## License
 The MIT License (MIT)
 
-Copyright (c) Benoit Tremblay <trembl.ben@gmail.com> and videojs-youtube contributors
+Copyright (c) Juan Bernárdez and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

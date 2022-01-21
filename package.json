@@ -2,7 +2,7 @@
   "name": "videojs-youtube-native",
   "description": "YouTube simple native playback technology for Video.js",
   "version": "1.0.0",
-  "author": "Juan Bernárdez & Benoit Tremblay",
+  "author": "Juan Bernárdez",
   "main": "dist/youtube-native.js",
   "license": "MIT",
   "keywords": [
