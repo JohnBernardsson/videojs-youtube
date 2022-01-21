@@ -1,9 +1,9 @@
 {
-  "name": "videojs-youtube",
-  "description": "YouTube playback technology for Video.js",
-  "version": "2.6.1",
-  "author": "Benoit Tremblay",
-  "main": "dist/Youtube.js",
+  "name": "videojs-youtube-native",
+  "description": "YouTube simple native playback technology for Video.js",
+  "version": "1.0.0",
+  "author": "Juan Bernárdez & Benoit Tremblay",
+  "main": "dist/youtube-native.js",
   "license": "MIT",
   "keywords": [
     "video",
@@ -15,33 +15,35 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/videojs/videojs-youtube.git"
+    "url": "https://github.com/JohnBernardsson/videojs-youtube.git"
   },
   "peerDependencies": {
-    "video.js": "5.x || 6.x || 7.x"
+    "video.js": "7.x"
   },
   "scripts": {
-    "build": "mkdirp dist && cp src/Youtube.js dist/Youtube.js && uglifyjs src/Youtube.js -o dist/Youtube.min.js",
-    "lint": "jshint .",
-    "test": "karma start --single-run",
-    "validate": "npm ls",
-    "version": "npm run build && git add -f dist"
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "lint": "eslint ./src"
   },
   "pre-commit": [
     "lint"
   ],
   "devDependencies": {
-    "http-server": "^0.10.0",
-    "jasmine-core": "^2.3.4",
-    "jshint": "^2.8.0",
-    "karma": "^1.3.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.0.2",
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.10",
+    "@babel/preset-env": "^7.16.10",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.1.0",
+    "eslint": "^8.7.0",
     "mkdirp": "^0.5.1",
-    "precommit-hook": "^3.0.0",
-    "uglify-js": "^3.4.6"
+    "pre-commit": "1.2.2",
+    "rollup": "^2.64.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "terser": "^5.10.0"
   },
   "dependencies": {
-    "video.js": "^5.6.0 || ^6.2.8 || ^7.0.2"
+    "@babel/eslint-parser": "^7.16.5",
+    "video.js": "^7.17.0"
   }
 }
